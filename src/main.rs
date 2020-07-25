@@ -35,12 +35,13 @@ fn main() -> Result<(), Error> {
                 let potential_tag = &sequence[p..scandist(p)];
                 for i in 0..potential_tag.len() - 4 {
                     //Print from 1..i instead of 0..i+1 in order to cut off leading G (EcoRI cut) and trailing T (MseI cut)
+                    //Actually print from 1.151 because of 150bp read length
                     if &potential_tag[i..i + 4] == msei {
                         if i <= 450 && i >= 350 {
                             println!(
                                 ">fabricated_rad_tag_{}\n{}",
                                 fa_head_idx,
-                                String::from_utf8_lossy(&potential_tag[1..i]).to_uppercase()
+                                String::from_utf8_lossy(&potential_tag[1..151]).to_uppercase()
                             );
                             fa_head_idx += 1;
                         }
