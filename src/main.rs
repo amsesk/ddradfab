@@ -39,9 +39,10 @@ fn main() -> Result<(), Error> {
                     if &potential_tag[i..i + 4] == msei {
                         if i <= 450 && i >= 350 {
                             println!(
-                                ">fabricated_rad_tag_{}\n{}",
+                                "@fabricated_rad_tag_{}\n{}\n+\n{}",
                                 fa_head_idx,
-                                String::from_utf8_lossy(&potential_tag[1..151]).to_uppercase()
+                                String::from_utf8_lossy(&potential_tag[1..151]).to_uppercase(),
+                                (0..150).map(|_| "?").collect::<String>()
                             );
                             fa_head_idx += 1;
                         }
