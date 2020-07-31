@@ -41,8 +41,8 @@ fn main() -> Result<(), Error> {
                             println!(
                                 "@fabricated_rad_tag_{}\n{}\n+\n{}",
                                 fa_head_idx,
-                                String::from_utf8_lossy(&potential_tag[1..151]).to_uppercase(),
-                                (0..150).map(|_| "?").collect::<String>()
+                                String::from_utf8_lossy(&potential_tag[1..141]).to_uppercase(),
+                                (0..140).map(|_| "?").collect::<String>()
                             );
                             fa_head_idx += 1;
                         }
